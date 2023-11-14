@@ -1,54 +1,81 @@
-Project#1
+Week 2
 
-let name = prompt("What is your name?");
-console.log(`Hello, ${name}`);
+// homework
 
-#2
-let inp = prompt("Please write anything you like");
-console.log(`Your provided string consists of ${inp.length} symbols`);
+// 1)დაწერეთ პროგრამა, რათა შეამოწმოთ რიცხვი ლუწია თუ კენტი.
 
-#3
+let checkingnum = 4;
 
-let str = prompt("What is the quote?");
-let author = prompt("Who said it");
+if (checkingnum % 2 === 0) {
+  console.log(`${checkingnum} არის ლუწი`);
+} else {
+  console.log(`${checkingnum} არის კენტი`);
+}
 
-console.log(
-  `What is the quote? ${str},\nWho said that? ${author}.\n${author} says, '${str}'`
-);
+// 2)დაწერეთ პროგრამა, რათა შეამოწმოთ რიცხვი დადებითია, უარყოფითი თუ ნული.
 
-4
+let checkingnum2 = 0;
 
-let val = prompt("Please write anything");
-console.log(val.toLowerCase());
+if (checkingnum2 > 0) {
+  console.log(`${checkingnum2} არის დადებითი`);
+} else if (checkingnum2 < 0) {
+  console.log(`${checkingnum2} არის უარყოფითი`);
+} else {
+  console.log(`${checkingnum2} არის 0-ის ტოლი`);
+}
 
-5
+//  3)დაწერეთ პროგრამა, რათა შეამოწმოთ არის თუ არა რიცხვი გასაყოფი სხვა რიცხვზე.
 
-let val2 = prompt("Please write anything");
+let testNum1 = 25;
+let testNum2 = 2.2;
 
-console.log(val2.replaceAll(" ", "..."));
+if (testNum1 % testNum2 == 0) {
+  console.log(`${testNum1} არის გასაყოფი`);
+} else {
+  console.log(`${testNum1} არ არის გასაყოფი`);
+}
+// 4)დაწერეთ პროგრამა, რათა შეამოწმოთ სტრიქონი ცარიელია თუ არა.
 
-6
-
-let val3 = prompt("Put any string and emoji");
-function convert(param) {
-  //   let updatedVal=param.replace(":)")
-  if (param.includes(":)")) {
-    return param.replaceAll(":)", "🙂");
-  } else if (param.includes(":(")) {
-    return param.replaceAll(":(", "🙁");
+function checkIfEmpty(param) {
+  if (param.length === 0) {
+    console.log(`${param} is empty`);
+  } else {
+    console.log(`${param} is not empty`);
   }
 }
 
-function main(param) {
-  return convert(param);
+checkIfEmpty("lo");
+
+let str = "";
+
+if (str.length === 0) {
+  console.log("It is empty");
+} else {
+  console.log("It is not empty");
 }
 
-let res = main(val3);
+// 5)დაწერეთ პროგრამა, რათა შეამოწმოთ, შეიცავს თუ არა სტრიქონი კონკრეტულ სიტყვას.
+
+let testingSub = "film";
+let str2 =
+  "ur corporate film shows Hapag-Lloyd’s global shipping activities emphasizing our worldwide services";
+
+if (str2.includes(testingSub)) {
+  console.log(`${str2} includes ${testingSub}`);
+} else {
+  console.log(`${str2} does not include ${testingSub}`);
+}
+
+// 6)დაწერეთ პროგრამა, რომ იპოვოთ მინიმალური ორი რიცხვიდან.
+
+function checkMin(param1, param2) {
+  return Math.min(param1, param2);
+}
+
+let res = checkMin(23, 36);
 console.log(res);
 
-Week 2
-
-#1 Mad Libs
+// პროექტი 7 - თამაში Mad Libs
 
 let noun = prompt("Enter a noun:");
 let verb = prompt("Enter a verb:");
@@ -59,25 +86,25 @@ let adjective = prompt("Enter a adjective:");
 let res = `${noun} ${verb} ${adj} ${adverb} ${adjective}? That is hilarious!`;
 console.log(res);
 
-2
+// პროექტი 8 - ქულების გამომთვლელი
 
 let score = +prompt("Enter the student's score");
 
 if (score >= 90 && score <= 100) {
-  console.log(`Student's Score : ${score},\n Grade: "A`);
+  console.log(`Student's Score : ${score},\n Grade: "A"`);
 } else if (score >= 80 && score <= 89) {
-  console.log(`Student's Score : ${score},\n Grade: "B`);
+  console.log(`Student's Score : ${score},\n Grade: "B"`);
 } else if (score >= 70 && score <= 79) {
-  console.log(`Student's Score : ${score},\n Grade: "C`);
+  console.log(`Student's Score : ${score},\n Grade: "C"`);
 } else if (score >= 60 && score <= 69) {
-  console.log(`Student's Score : ${score},\n Grade: "D`);
+  console.log(`Student's Score : ${score},\n Grade: "D"`);
 } else if (score <= 59) {
-  console.log(`Student's Score : ${score},\n Grade: "E`);
+  console.log(`Student's Score : ${score},\n Grade: "E"`);
 } else {
   console.log("Please put correct score between 0-100");
 }
 
-3 Simple Math
+// პროექტი 9 - Simple Math - მარტივი მათემატიკა
 
 let num1 = +prompt("Please enter the first number");
 let num2 = +prompt("Please enter the second number");
@@ -89,21 +116,21 @@ let div = num1 / num2;
 
 console.log(sum, diff, mult, div);
 
-4 Einstein
+// პროექტი 10 - Einstein - აინშტაინი
 let mass = prompt("Enter mass in KGs:");
 
 function calculateEn(param) {
   if (param.includes(".") || param.includes(",")) {
     console.log("Please put integers");
   } else {
-    return 300000000 * +param;
+    return 300000000 ** 2 * +param;
   }
 }
 
 let result = calculateEn(mass);
 console.log(result);
 
-5 Tip Calculator
+// პროექტი 11 - Tip Calculator - "ჩაის" კალკულატორი
 
 let mealcost = prompt(" How much was the meal?");
 function convertPrice(param) {
@@ -121,7 +148,7 @@ let res2 = converTip(percentage);
 let tip = res1 * res2;
 
 console.log(`Tip: ${tip}`);
-6
+// პროექტი 12 - Retirement Calculator - საპენსიო კალკულატორი
 
 let year = new Date().getFullYear();
 console.log(year);
@@ -136,7 +163,7 @@ console.log(
   }.`
 );
 
-7
+// პროექტი 13 - Area of a Rectangular Room - მართკუთხა ოთახის ფართობი
 
 let length = +prompt("What is the length of the room in feet?");
 let width = +prompt("What is the width of the room in feet?");
@@ -147,7 +174,7 @@ console.log(
   `You entered dimensions of ${length} feet by ${width} feet.\nThe area is ${areaFt}.\n ${areaM} square meters`
 );
 
-8
+// პროექტი 14 - Pizza Party - პიცის წვეულება
 let people = +prompt(" How many people?");
 
 let pizza = +prompt(" How many pizza?");
@@ -164,7 +191,7 @@ let result = `${people} with ${pizza} pizzas.\nEach person gets ${int} ${pcsWord
 
 console.log(result);
 
-9
+// პროექტი 15 - Paint Calculator - საღებავის კალკულატორი
 
 let ceilingLength = +prompt("enter ceil's length");
 let ceilwidth = +prompt("enter ceil's width");
@@ -175,7 +202,7 @@ console.log(
   ` You will need to purchase ${neededGalloons} gallons of paint to cover ${sq} square feet`
 );
 
-10
+// პროექტი 16 - Self-Checkout - თვით-გადახდა
 
 let firstItemPrice = +prompt("Enter the price of item 1");
 let firstItemAmount = +prompt("Enter the quantity of item 1");
@@ -189,7 +216,7 @@ let totalCost =
   secondItemAmount * secondItemPrice +
   thirdItemAmount * thirdItemPrice;
 
-let tax = (totalCost * 5.5) / 100;
+let tax = totalCost * 0.055;
 let totalPrice = totalCost + tax;
 
 console.log(`
@@ -197,30 +224,40 @@ console.log(`
 > Tax: $${tax}
 > Total: $${totalPrice}`);
 
-11
+// პროექტი 17 - Currency Conversion - ვალუტის კონვერტაცია
 
-let amount = +prompt("How many euros are you exchanging");
-let rate = +prompt("What is the exchange rate? ");
-let result3 = amount * rate;
+let amountEuro = +prompt("How many euros are you exchanging");
+let rateFrom = +prompt("What is the exchange rate for Euro? ");
+let rateTo = +prompt("What is the exchange rate for dollar? ");
+let amountInDollar = (amountEuro * rateFrom) / rateTo;
 
 console.log(
-  `${amount} euros at an exchange rate of ${rate} is ${result3} dollars.`
+  `${amountEuro} euros at an exchange rate of ${rateFrom} is ${amountInDollar} dollars.`
 );
 
-12
+// პროექტი 18 - Computing Simple Interest - მარტივი პროცენტის გამოთვლა
 let principal = +prompt("enter the principal");
 let interest = +prompt("enter the interest");
 let year = +prompt("enter the number of years");
-let yearInterest = principal * (interest / 100) * year;
+let result = principal * ((interest / 100) * year + 1);
 
-let result4 = principal + yearInterest;
 console.log(
-  `after ${year} years at ${interest}, the investment will be worth ${result4}`
+  `after ${year} years at ${interest}, the investment will be worth ${result}`
 );
 
-13
+// პროექტი 19 - Computing Simple Interest - მარტივი პროცენტის გამოთვლა
 
-14
+let initialAmount = +prompt("Enter the initial amount");
+let years = +prompt("Enter years");
+let percentage = +prompt("Enter the interest") / 100;
+let quantity = +prompt("Enter how many times should you get additioanl money");
+
+let finalAmount =
+  initialAmount * (1 + percentage / quantity) ** (quantity * years);
+
+console.log(finalAmount);
+
+// პროექტი 20 - Deep Thought - ღრმა ფიქრი
 
 let inp = prompt(
   "What is the answer to the Great Question of Life, the Universe, and Everything?"
@@ -233,21 +270,20 @@ if (inp2 == "42" || inp2 == "forty-two" || inp2 == "forty two") {
   console.log("no");
 }
 
-15
+// პროექტი 21 - Home Federal Saving Bank - ფედერალური ბანკი
 
 let greeting = prompt("Greeting");
 let grt = greeting.trim().toLowerCase();
-console.log(grt);
 
 if (grt == "hello") {
-  console.log(0);
+  console.log("$0");
 } else if (grt.charAt(0) == "h" && grt != "hello") {
   console.log("$20");
 } else {
   console.log("$100");
 }
 
-16
+// პროექტი 22 - File Extensions - ფაილის ტიპები
 
 let str = prompt("File name").toLowerCase();
 
@@ -269,30 +305,57 @@ if (str.slice(-5) == ".jpeg") {
   console.log("application / octet - stream");
 }
 
-17
+// პროექტი 23 - Math Interpreter - მათემატიკური ინტერპრეტატორი
 
 let pro = prompt("enter numbers");
-let numVal = eval(pro);
-console.log(numVal.toFixed(2));
 
-18
+let numArrat = pro.split(" ");
+let x = numArrat[0];
+let y = numArrat[1];
+let z = numArrat[2];
 
-let time = prompt("What time is it?");
-let timenum = +time.replace(":", ".");
-console.log(time, timenum);
-
-if (timenum >= 7 && timenum <= 8) {
-  console.log(`time ${time}, it is Breakfast time`);
-} else if (timenum >= 12 && timenum <= 13) {
-  console.log(`time ${time}, it is dinner time`);
-} else if (timenum >= 18 && timenum <= 19) {
-  console.log(`time ${time}, it is supper time`);
+if (y == "/" && z == "0") {
+  console.log("OOps we can ot devide number by 0");
+} else {
+  console.log(eval(x + y + z));
 }
 
-19
+// პროექტი 24 - Meal Time - კვების დრო
+
+let time = prompt("What time is it?");
+
+function convert(param) {
+  let timenum = param.split(":");
+  let whole = +timenum[0];
+  let decimal = Number(timenum[1]);
+  let newDecimal = Math.floor((decimal / 60) * 100);
+  let newTime = `${whole}.${newDecimal}`;
+
+  if (newTime >= 7 && newTime <= 8) {
+    console.log(`time ${time}, it is Breakfast time`);
+  } else if (newTime >= 12 && newTime <= 13) {
+    console.log(`time ${time}, it is dinner time`);
+  } else if (newTime >= 18 && newTime <= 19) {
+    console.log(`time ${time}, it is supper time`);
+  }
+
+  return newTime;
+}
+
+console.log(convert(time));
+
+// პროექტი 25 Adding Numbers
+let sum = 0;
+for (let i = 0; i < 3; i++) {
+  let num = +prompt("White the number");
+  sum += num;
+}
+console.log(sum);
+
+// პროექტი 26 - Tax Calculator - გადასახადის კალკულატორი
 
 let orderAmount = +prompt("What is the order amount?");
-let state = prompt("what is the state?");
+let state = prompt("what is the state?").toUpperCase();
 let tax = 5.5;
 
 if (state !== "WI") {
@@ -301,11 +364,11 @@ if (state !== "WI") {
   let taxAmount = (Number(orderAmount) * tax) / 100;
   let total = orderAmount + taxAmount;
   console.log(
-    `the subtotal is ${orderAmount}, tax is ${taxAmount}, total is ${total}`
+    `the subtotal is $${orderAmount}, tax is $${taxAmount}, total is $${total}`
   );
 }
 
-20
+// პროექტი 27 - Password Validation - პაროლის ვალიდაცია
 let correctPassword = "AttackOnTitans!!!20";
 let inputPassword = prompt("What is the password?");
 
@@ -315,7 +378,7 @@ if (correctPassword == inputPassword) {
   console.log("I do not know you.");
 }
 
-21
+// პროექტი 28 - Legal Driving Age - მართვის კანონიერი ასაკი
 let legalAge = 16;
 let userAge = +prompt("What is your age?");
 
@@ -323,12 +386,12 @@ legalAge <= userAge
   ? console.log("You are old enough to legally drive.")
   : console.log("You are not old enough to legally drive.");
 
-22
+// პროექტი 29 - Blood Alcohol Calculator - სისხლში ალკოჰოლის შემცველობის კალკულატორი
 
 let gender = prompt("Please write your gender");
 let mass = +prompt("Please write your weight");
 let alcAmount = +prompt(
-  "Please write amount of Alcohol you drank, please wrote it in ounces"
+  "Please write amount of Alcohol you drank, please write it in ounces"
 );
 let lastTime = +prompt("How long ago did you drink alcohol?");
 
@@ -343,7 +406,7 @@ if (bac >= 0.8) {
   );
 }
 
-23
+// პროექტი 30 - Temperature Converter - ტემპერატურის კონვერტაცია
 
 let choice = prompt(
   "Press C to convert from Fahrenheit to Celsius,\nPress F to convert from Celsius to Fahrenheit. "
@@ -361,7 +424,7 @@ if (choice === "c") {
   console.log(`Temperature in Farenheit is ${resF}`);
 }
 
-24
+// პროექტი 31 - BMI Calculator - სხეულის მასის ინდექსის კალკულატორი
 let weight = +prompt("Please put your weight");
 let hght = +prompt("Please put your height");
 let resBmi = (weight / (hght * hght)) * 703;
@@ -380,7 +443,7 @@ if (resBmi >= 18.5 && resBmi <= 25) {
   );
 }
 
-25
+// პროექტი 32 - Multistate Sales Tax Calculator - შტატშორისი გაყიდვების გადასახადის კალკულატორი
 
 let orderAmount = +prompt("What is the order amount?");
 let state = prompt(" What state do you live in?").toLowerCase();
@@ -394,85 +457,85 @@ if (state == "wisconsin") {
     tax = 0.004;
     totalTax = orderAmount * tax;
     totalOrder = totalTax + orderAmount;
-    console.log(`The tax is ${totalTax},The total is ${totalOrder}`);
+    console.log(`The tax is $${totalTax},The total is $${totalOrder}`);
   } else if (county == "eau claire") {
     tax = 0.005;
     totalTax = orderAmount * tax;
     totalOrder = totalTax + orderAmount;
-    console.log(`The tax is ${totalTax},The total is ${totalOrder}`);
+    console.log(`The tax is $${totalTax},The total is $${totalOrder}`);
   } else {
-    console.log(`The total is ${orderAmount}`);
+    console.log(`The total is $${orderAmount}`);
   }
 } else if (state == "illinois") {
   tax = 0.08;
   totalTax = orderAmount * tax;
   totalOrder = totalTax + orderAmount;
-  console.log(`The tax is ${totalTax},The total is ${totalOrder}`);
+  console.log(`The tax is $${totalTax},The total is $${totalOrder}`);
 } else {
-  console.log(`The total is ${orderAmount}`);
+  console.log(`The total is $${orderAmount}`);
 }
 
-26
+// პროექტი 33 - Numbers to Names - რიცხვები სიტყვებში
 
-let numb = +prompt("Please put a number");
+let numb = prompt("Please put a number");
 
 switch (numb) {
-  case 1:
+  case "1":
     {
       console.log("The name of the month is January");
     }
     break;
-  case 2:
+  case "2":
     {
       console.log("The name of the month is February");
     }
     break;
-  case 3:
+  case "3":
     {
       console.log("The name of the month is March");
     }
     break;
-  case 4:
+  case "4":
     {
       console.log("The name of the month is April");
     }
     break;
-  case 5:
+  case "5":
     {
       console.log("The name of the month is May");
     }
     break;
-  case 6:
+  case "6":
     {
       console.log("The name of the month is June");
     }
     break;
-  case 7:
+  case "7":
     {
       console.log("The name of the month is July");
     }
     break;
-  case 8:
+  case "8":
     {
       console.log("The name of the month is August");
     }
     break;
-  case 9:
+  case "9":
     {
       console.log("The name of the month is September");
     }
     break;
-  case 10:
+  case "10":
     {
       console.log("The name of the month is December");
     }
     break;
-  case 11:
+  case "11":
     {
       console.log("The name of the month is November");
     }
     break;
-  case 12:
+  case "12":
     {
       console.log("The name of the month is December");
     }
@@ -482,25 +545,31 @@ switch (numb) {
   }
 }
 
-27
+// პროექტი 34 - Comparing Numbers - რიცხვების შედარება
 
 let firstNum = +prompt("Enter the first number");
 let secondNum = +prompt("Enter the second number");
 let thirdNum = +prompt("Enter the third number");
 
-if (firstNum !== secondNum && firstNum !== thirdNum && secondNum !== thirdNum) {
-  if (firstNum > secondNum && firstNum > thirdNum) {
-    console.log(`${firstNum} is the bggest number`);
-  } else if (secondNum > firstNum && secondNum > thirdNum) {
-    console.log(`${secondNum} is the bggest number`);
+if (!isNaN(firstNum) && !isNaN(secondNum) && !isNaN(thirdNum)) {
+  if (
+    firstNum !== secondNum &&
+    firstNum !== thirdNum &&
+    secondNum !== thirdNum
+  ) {
+    if (firstNum > secondNum && firstNum > thirdNum) {
+      console.log(`${firstNum} is the bggest number`);
+    } else if (secondNum > firstNum && secondNum > thirdNum) {
+      console.log(`${secondNum} is the bggest number`);
+    } else {
+      console.log(`${thirdNum} is the bggest number`);
+    }
   } else {
-    console.log(`${thirdNum} is the bggest number`);
+    console.log("Please note that numbers must be different");
   }
-} else {
-  console.log("Please note that numbers must be different");
-}
+} else console.log("Please usee only digits/numbers");
 
-28
+// პროექტი 35 - Troubleshooting Car Issues - მანქანის პრობლემების მოგვარება
 let response = prompt("Does the engine start?");
 
 if (response == "y") {
