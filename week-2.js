@@ -307,6 +307,8 @@ if (str.slice(-5) == ".jpeg") {
 
 // პროექტი 23 - Math Interpreter - მათემატიკური ინტერპრეტატორი
 
+
+// es pirveli gza eval()-it
 let pro = prompt("enter numbers");
 
 let numArrat = pro.split(" ");
@@ -319,6 +321,46 @@ if (y == "/" && z == "0") {
 } else {
   console.log(eval(x + y + z));
 }
+
+// es meore gza eval()-is gareshe 
+
+let pro = prompt("enter numbers");
+
+let numArrat = pro.split(" ");
+let x = Number(numArrat[0]);
+let y = numArrat[1];
+let z = Number(numArrat[2]);
+let result = 0;
+if (y == "/" && z == "0") {
+  console.log("OOps we can ot devide number by 0");
+} else {
+  switch (y) {
+    case "+": {
+      result = x + z;
+      console.log(result);
+      break;
+    }
+    case "-": {
+      result = x - z;
+      console.log(result);
+      break;
+    }
+    case "/": {
+      result = x / z;
+      console.log(result);
+      break;
+    }
+    case "*": {
+      result = x * z;
+      console.log(result);
+      break;
+    }
+    default: {
+      console.log("invalid operator");
+    }
+  }
+}
+
 
 // პროექტი 24 - Meal Time - კვების დრო
 
@@ -346,7 +388,7 @@ console.log(convert(time));
 
 // პროექტი 25 Adding Numbers
 let sum = 0;
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 5; i++) {
   let num = +prompt("White the number");
   sum += num;
 }
