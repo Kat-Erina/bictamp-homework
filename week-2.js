@@ -406,7 +406,7 @@ if (state !== "WI") {
   let taxAmount = (Number(orderAmount) * tax) / 100;
   let total = orderAmount + taxAmount;
   console.log(
-    `the subtotal is $${orderAmount}, tax is $${taxAmount}, total is $${total}`
+    `the subtotal is $${orderAmount.toFixed(2)}, tax is $${taxAmount}, total is $${total}`
   );
 }
 
@@ -430,7 +430,7 @@ legalAge <= userAge
 
 // პროექტი 29 - Blood Alcohol Calculator - სისხლში ალკოჰოლის შემცველობის კალკულატორი
 
-let gender = prompt("Please write your gender");
+let gender = prompt("Please write your gender").toLowerCase();
 let mass = +prompt("Please write your weight");
 let alcAmount = +prompt(
   "Please write amount of Alcohol you drank, please write it in ounces"
@@ -439,14 +439,15 @@ let lastTime = +prompt("How long ago did you drink alcohol?");
 
 let ind = gender == "female" ? 0.66 : 0.73;
 
-let bac = (alcAmount * 5.14) / (mass * ind) - 0.15 * lastTime;
-if (bac >= 0.8) {
+let bac = (alcAmount * 5.14) / (mass * ind) - 0.015 * lastTime;
+if (bac >= 0.08) {
   console.log(`your BAC is ${bac}, you are not allowed to drive `);
 } else {
   console.log(
     "Your bac is less than the allowed bac, you are allowed to drive"
   );
 }
+
 
 // პროექტი 30 - Temperature Converter - ტემპერატურის კონვერტაცია
 
@@ -457,7 +458,7 @@ let choice = prompt(
 console.log(`your choise is ${choice}`);
 
 if (choice === "c") {
-  let tempF = prompt("Please enter the temperature in Farenheit:");
+  let tempF = +prompt("Please enter the temperature in Farenheit:");
   let resC = ((tempF - 32) * 5) / 9;
   console.log(`Temperature in Celsius is ${resC}`);
 } else if (choice === "f") {
