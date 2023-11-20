@@ -237,6 +237,26 @@ passwordValidator(userPassword);
 
 // პროექტი 38 - Months to Pay Off a Credit Card - საკრედიტო ბარათის დაფარვისთვის საჭირო თვეები
 
+let credit = +prompt("What is your balance?"); // loan amount
+
+let annualInterest = +prompt("What is APR on the card (as a percent)?"); // annual interest rate
+let monthlyPayment = +prompt("What is the monthly payment you can make?"); // monthly payment
+
+function countMonthsUntilPaidOff(balance, apr, monthlyPayment) {
+  let daily = apr / 100 / 365;
+  let months = Math.ceil(
+    (-1 / 30) *
+      (Math.log(1 + (balance / monthlyPayment) * (1 - (1 + daily) ** 30)) /
+        Math.log(1 + daily))
+  );
+
+  return months;
+}
+
+let result = countMonthsUntilPaidOff(credit, annualInterest, monthlyPayment);
+
+alert(`it will take ${result} months to pay off this card.`);
+
 // პროექტი 39 - Validating Inputs - Input-ების ვალიდაცია
 
 //meechveba ramdenad sworad wavedi, logika mushaobs magram dzaan grdzeli kodia, 
@@ -270,8 +290,6 @@ function checkLastName(param) {
   } else if (param.length == 1) {
     console.log("lastname is too short");
     validStatus = false;
-  } else {
-    console.log(validStatus);
   }
 
   return validStatus;
@@ -281,6 +299,7 @@ function checkId(param) {
   if (idRegex.test(param)) {
     validStatus = true;
   } else {
+    console.log("Invalid ID");
     validStatus = false;
   }
   return validStatus;
@@ -290,12 +309,13 @@ function checkZip(param) {
   if (zipRegex.test(param)) {
     validStatus = true;
   } else {
+    console.log("The ZIP code must be numeric.");
     validStatus = false;
   }
   return validStatus;
 }
 
-function validateInput(name, lastName, zip, id) {
+function validateInput(name,lastName,zip,id) {
   let nameVal = checkName(name);
   let lastNameVal = checkLastName(lastName);
   let idVal = checkId(id);
@@ -303,22 +323,16 @@ function validateInput(name, lastName, zip, id) {
 
   if (nameVal && lastNameVal && idVal && zipVal) {
     console.log("No errors found");
-  } else if (!nameVal) {
-    checkName(name);
-  } else if (!lastNameVal) {
-    checkLastName(lastName);
-  } else if (!idVal) {
-    console.log("invalid ID");
-    checkId(id);
-  } else if (!zipVal) {
-    console.log("invalid zip");
-    checkZip(zip);
   } else {
-    console.log("sth is wrong");
+    checkName(name);
+    checkLastName(lastName);
+    checkId(id);
+    checkZip(zip);
   }
 }
 
-validateInput(name, lastName, zip, id);
+validateInput(name,lastName,zip,id);
+
 
 // პროექტი 40 - Camel Case
 
