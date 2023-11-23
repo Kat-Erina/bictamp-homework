@@ -488,7 +488,7 @@ if (resBmi >= 18.5 && resBmi <= 25) {
 
 // პროექტი 32 - Multistate Sales Tax Calculator - შტატშორისი გაყიდვების გადასახადის კალკულატორი
 
-let orderAmount = +prompt("What is the order amount?");
+let orderAmount = Number(prompt("What is the order amount?").replace("$", ""));
 let state = prompt(" What state do you live in?").toLowerCase();
 let tax;
 let totalTax;
@@ -517,6 +517,7 @@ if (state == "wisconsin") {
 } else {
   console.log(`The total is $${orderAmount}`);
 }
+
 
 // პროექტი 33 - Numbers to Names - რიცხვები სიტყვებში
 
@@ -570,7 +571,7 @@ switch (numb) {
     break;
   case "10":
     {
-      console.log("The name of the month is December");
+      console.log("The name of the month is October");
     }
     break;
   case "11":
@@ -601,11 +602,11 @@ if (!isNaN(firstNum) && !isNaN(secondNum) && !isNaN(thirdNum)) {
     secondNum !== thirdNum
   ) {
     if (firstNum > secondNum && firstNum > thirdNum) {
-      console.log(`${firstNum} is the bggest number`);
+      console.log(`${firstNum} is the biggest number`);
     } else if (secondNum > firstNum && secondNum > thirdNum) {
-      console.log(`${secondNum} is the bggest number`);
+      console.log(`${secondNum} is the biggest number`);
     } else {
-      console.log(`${thirdNum} is the bggest number`);
+      console.log(`${thirdNum} is the biggest number`);
     }
   } else {
     console.log("Please note that numbers must be different");
