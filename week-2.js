@@ -474,15 +474,19 @@ let resBmi = (weight / (hght * hght)) * 703;
 
 if (resBmi >= 18.5 && resBmi <= 25) {
   console.log(
-    `Your bmi is ${resBmi}.\n You are within the ideal weight range.`
+    `Your bmi is ${resBmi.toFixed(2)}.\n You are within the ideal weight range.`
   );
 } else if (resBmi < 18.5) {
   console.log(
-    `Your bmi is ${resBmi}.\n You are underweight, please visit the doctor.`
+    `Your bmi is ${resBmi.toFixed(
+      2
+    )}.\n You are underweight, please visit the doctor.`
   );
 } else {
   console.log(
-    `Your bmi is ${resBmi}.\n You are overweight, please visit the doctor.`
+    `Your bmi is ${resBmi.toFixed(
+      2
+    )}.\n You are overweight, please visit the doctor.`
   );
 }
 
