@@ -22,12 +22,8 @@ function findAverage(arr) {
   for (number of arr) {
     sum += number;
   }
-  return sum / arr.length;
-
-  // or
-  // return +Math.round(sum / arr.length);
+  return Number((sum / arr.length).toFixed(2));
 }
-
 console.log(findAverage(numbersarray));
 
 // 3)დაწერეთ პროგრამა რიცხვების მასივის ზრდის მიხედვით დასალაგებლად.
@@ -99,15 +95,17 @@ console.log(findIfIncludes(numbersarray, 10));
 
 // 7)დაწერეთ პროგრამა მასივიდან ელემენტის ამოსაღებად.
 
-let numbersarray = [10, -5.25, -35, true, 1, 13, 10, -5, "me", 12, 0, 5.23];
+let numbersarray = [10, -5.25, -35, 13, true, 1, 13, 10, -5, "me", 12, 0, 5.23];
 
 function getItem(arr, item) {
+  let newArr = Array.from(new Set(arr));
   let index = arr.indexOf(item);
-
-  return arr[index];
+  console.log(newArr);
+  newArr.splice(index, 1);
+  return newArr;
 }
 
-console.log(getItem(numbersarray, -35));
+console.log(getItem(numbersarray, 13));
 // 8)დაწერეთ პროგრამა მასივში კონკრეტული ელემენტის გავრცელების რაოდენობის დასათვლელად.
 
 let numbersarray = [
@@ -201,6 +199,10 @@ console.log(giveMeSortedArray(array1, array2));
 let array = ["me", "nika", "ilia", "rati", "erekle", "lam-pari", "elza", "ala"];
 
 function sortArray(param) {
+  param.forEach((el) => {
+    return el.toLowerCase();
+  });
+  console.log(param);
   return param.sort();
 }
 
@@ -465,10 +467,8 @@ function removeEmployer(param) {
     param.forEach((elemenet) => {
       console.log(elemenet);
     });
-    return;
   } else {
     console.log("Please put correct name");
-    return;
   }
 }
 
