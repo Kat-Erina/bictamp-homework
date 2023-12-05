@@ -21,7 +21,7 @@ function findLongestWord(param) {
       longestWord = sentArray[i];
     }
   }
-  return longestWord;
+  return longestWord.length;
 }
 
 console.log(findLongestWord(sent));
@@ -113,7 +113,7 @@ switch (num) {
 // 7)დაწერეთ პროგრამა, რომელიც სთხოვს მომხმარებელს გამოიცნოს საიდუმლო რიცხვი 1-დან 10-მდე. განაგრძეთ გამოცნობის მოთხოვნა, სანამ ისინი სწორად გამოიცნობენ, while loop-ის გამოყენებით.
 
 let secretNumber = 9;
-let usersNumber = +prompt("Write down the secrect number");
+let usersNumber = +prompt("Write down the secret number");
 while (usersNumber !== secretNumber) {
   usersNumber = +prompt("Write down the secret number");
 }
@@ -215,7 +215,7 @@ if (matches == firstStr.length) {
 
 let userPassword = prompt("Enter password");
 let veryWeekPassword = /^\d{1,7}$/;
-let weekPassword = /^[a-zA-Z]{1,7}$/;
+let weekPassword = /^^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{1,7}$/;
 let strongPassword = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
 let veryStrong = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*\W).{8,}$/;
@@ -265,10 +265,10 @@ let name = prompt("Enter name");
 let lastName = prompt("Enter lastname");
 let zip = prompt("Enter zip");
 let id = prompt("Enter id");
-let idRegex = /^[A-Za-z]{2}-\d{4}$/;
+let idRegex = /^[A-Za-z]{2}-\d{3,4}$/;
 let zipRegex = /^\d{2,}$/;
 let validStatus = false;
-
+// es aris pirveli gza,  grdzeli kodi
 function checkName(param) {
   if (param == "") {
     console.log(`The name must be filled in.`);
@@ -331,7 +331,33 @@ function validateInput(name,lastName,zip,id) {
   }
 }
 
-validateInput(name,lastName,zip,id);
+validateInput(name,lastName,zip,id)
+
+// es aris shedarebit mokle gza , meore varianti
+function validateInput(...params) {
+  let [name, lastName, zip, id] = [...params];
+
+  if (name.length == 1) {
+    console.log("name is too short");
+  } else if (name.length == 0) {
+    console.log("Please fill out the name field");
+  } else if (lastName.length == 1) {
+    console.log("lastname is too short");
+  } else if (lastName.length == 0) {
+    console.log("Please fill out the lastname filed");
+  } else if (!zipRegex.test(zip)) {
+    if (zip == "") {
+      console.log(`zip can not be empty`);
+    } else console.log(`${zip} is not a valid zip`);
+  } else if (!idRegex.test(id)) {
+    if (id == "") {
+      console.log("ID can not be empty");
+    } else console.log(`${id} is not a valid id`);
+  } else console.log("No errors found");
+}
+
+validateInput(name, lastName, zip, id);
+
 
 
 // პროექტი 40 - Camel Case
@@ -466,7 +492,7 @@ for (let i = 0; i < max; i++) {
 }
 
 // პროექტი 46 - Karvonen Heart Rate
-
+// es pirveli gza
 let restingHeart;
 let age;
 do {
@@ -498,6 +524,34 @@ do {
   restingHeart == 0 ||
   age == 0
 );
+
+// es meore gza 
+let restingHeart;
+let age;
+let invalidValue;
+do {
+  restingHeart = +prompt("enter pulse");
+  age = +prompt("enter age");
+
+  invalidValue =
+    isNaN(restingHeart) ||
+    isNaN(age) ||
+    restingHeart == "" ||
+    age == "" ||
+    restingHeart == 0 ||
+    age == 0;
+
+  if (invalidValue) {
+    alert("Please write numbers only");
+  } else {
+    for (let i = 55; i < 100; i += 5) {
+      let targetHeartRate =
+        (220 - age - restingHeart) * (i / 100) + restingHeart;
+
+      console.log(`${i} : ${Math.round(targetHeartRate)} bpm`);
+    }
+  }
+} while (invalidValue);
 
 // პროექტი 47 - Guess The Number Game - თამაში რიცხვის გამოცნობაზე
 
