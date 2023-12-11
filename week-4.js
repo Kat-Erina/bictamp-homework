@@ -280,17 +280,17 @@ answerQuestion(question);
 // პროექტი 49 - Picking a Winner - გამარჯვებულის არჩევა
 
 function whoIswinner() {
-  let array = ["Kato", "Rati", "Magda", "Natia", "Maka", "Zura", "Nino"];
-
-  while (array.length != 0) {
+  let array = [];
+  do {
     let question = prompt("Enter a name...");
     if (question == "") {
       let random = Math.floor(Math.random() * array.length);
       console.log(`The winner is ${array[random]}`);
       array.splice(random, 1);
-    }
-  }
-  return array;
+      console.log(array);
+      //   return array;
+    } else array.push(question);
+  } while (array.length != 0);
 }
 
 whoIswinner();

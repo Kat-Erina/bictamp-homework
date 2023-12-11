@@ -3,8 +3,7 @@
 function getRandomNumber(num1, num2) {
   const randomNumber = num1 + Math.random() * (num2 - num1);
 
-  // return Math.round(randomNumber);
-  // an aseve Math.floor() shegvidzlia
+  return Math.floor(randomNumber);
 }
 
 const result = getRandomNumber(10, 30);
@@ -97,8 +96,8 @@ function uniqueWords(param) {
 console.log(uniqueWords(sente));
 
 // //6
-let arr = [2, 5.03, 6, 12, 3, 96, 5];
-let fileteredArr = arr.filter((el) => el > 10);
+let arr = ["kato", true, false, "", 0, 35, undefined, null, NaN];
+let fileteredArr = arr.filter((el) => !el);
 console.log(fileteredArr);
 //7
 
@@ -107,11 +106,7 @@ let sente2 =
 
 function sortArray(param) {
   let arr = param.split(" ");
-  // aq gadamyavs lowercase shi rom did da patara asoebs shoris ar mogvce gansxvavebuli sortireba
-  let sth = arr.map((el) => el.toLowerCase());
-
-  let test = sth.sort((el1, el2) => el2.localeCompare(el1));
-  return test;
+  return arr.reverse().join(" ");
 }
 
 console.log(sortArray(sente2));

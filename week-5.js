@@ -4,9 +4,11 @@ let person = {
   name: "Kato",
   age: 30,
   lastName: "Nalchevanidze",
-  sayHello: function () {
-    console.log(this.name);
-  },
+};
+
+//2
+person.sayHello = function () {
+  console.log(this.name);
 };
 person.sayHello();
 // //3
