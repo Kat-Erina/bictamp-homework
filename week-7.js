@@ -1,72 +1,50 @@
-// Changing Text Content - ტექსტის შეცვლა
+const p = document.querySelector(".pText");
 
-const p = document.createElement("p");
-
-document.body.append(p);
 function changeText(element, text) {
   element.innerText = text;
 }
-
-changeText(p, "Hello");
-// an meore versiad clickze moxdes es yvelaferi
-p.innerText = "Click Me";
-p.addEventListener("click", () => {
-  changeText.call(p, p, "Hello There");
+p.addEventListener("click", (e) => {
+  changeText(e.target, "Text Changed");
 });
 
 // Changing Styles - სტილის შეცვლა
 
-const btn = document.createElement("button");
-document.body.append(btn);
-btn.innerText = "Click Me";
-btn.addEventListener("click", () => {
-  btn.style.color = "white";
-  btn.style.backgroundColor = "red";
+const btn1 = document.querySelector(".firstBtn");
+btn1.addEventListener("click", () => {
+  btn1.style.color = "white";
+  btn1.style.backgroundColor = "red";
 });
-
 // Creating Elements - ელემენტების შექმნა
 
-const div = document.createElement("div");
-const btn = document.createElement("button");
+const div = document.querySelector(".firstDiv");
+const btn2 = document.createElement("button");
 
-document.body.append(btn);
-document.body.append(div);
-btn.innerText = "Click Me";
+btn2.innerText = "Click to change Text";
+div.append(btn2);
 
-btn.addEventListener("click", insertElement);
-function insertElement() {
+function changeHtml() {
   const p = document.createElement("p");
   p.innerText = "ახალი აბზაცი";
   div.append(p);
 }
 
-// Event Handling
-const btn = document.createElement("button");
-document.body.append(btn);
-btn.innerText = "click Me!";
+btn2.addEventListener("click", () => changeHtml());
 
-btn.addEventListener("click", () => {
+// Event Handling
+const btn3 = document.querySelector(".thirdBtn");
+btn3.innerText = "click Me!";
+
+btn3.addEventListener("click", () => {
   alert("ღილაკზე დაწკაპუნება");
 });
-
-// Form Validation - ფორმის ვალიდაცია
-const btn = document.querySelector("button");
-const inp = document.querySelector("input");
+//Form Validation - ფორმის ვალიდაცია
+const sendBtn = document.querySelector(".sendData");
+const inp = document.querySelector(".name");
 const spn = document.querySelector("span");
-btn.addEventListener("click", (e) => {
-  e.preventDefault();
-  if (inp.value == "") {
-    spn.innerText = "Please fill out the input!";
-  } else {
-    spn.innerText = "Information sent!";
-  }
-});
-
-//an aseve ufro martivad sheidzleba Regex is gamoyenebit romelic amowmebs 1 asos mainc tu sheicavs
 
 let inpRegex = /.*[A-Za-z].*/;
 
-btn.addEventListener("click", (e) => {
+sendBtn.addEventListener("click", (e) => {
   e.preventDefault();
   if (!inpRegex.test(inp.value)) {
     spn.innerText = "Please fill out the input!";
@@ -76,25 +54,25 @@ btn.addEventListener("click", (e) => {
 });
 
 // Dynamic List Management - დინამიური სიის მართვა
-let inpRegex = /.*[A-Za-z].*/;
-const btn = document.querySelector("button");
-const inp = document.querySelector("input");
+let inpRegex2 = /.*[A-Za-z].*/;
+const addBtn = document.querySelector(".add");
+const newItemInp = document.querySelector(".newItem");
 const list = document.querySelector("ul");
 
-btn.addEventListener("click", (e) => {
+addBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  if (inpRegex.test(inp.value)) {
+  if (inpRegex2.test(newItemInp.value)) {
     let newItem = document.createElement("li");
     let p = document.createElement("p");
     let btn = document.createElement("button");
     btn.textContent = "X";
     btn.classList.add("btn");
     btn.style.marginLeft = "10rem";
-    p.innerText = inp.value;
+    p.innerText = newItemInp.value;
     p.append(btn);
     newItem.append(p);
     list.append(newItem);
-    inp.value = "";
+    newItemInp.value = "";
   } else alert("Please fill out the form");
 });
 
