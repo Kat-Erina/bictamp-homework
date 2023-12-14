@@ -1,24 +1,24 @@
 // Changing Text Content - ტექსტის შეცვლა
 
-const p = document.querySelector("p");
+const p = document.createElement("p");
 
-p.addEventListener("click", () => {
-  p.innerText = "Hello Dom!";
-});
-
-// es meore gza
-p.addEventListener("click", () => {
-  changeText.call(p, p);
-});
-
-function changeText(param) {
-  console.log(param);
-  param.innerText = "Hello Dom!";
+document.body.append(p);
+function changeText(element, text) {
+  element.innerText = text;
 }
+
+changeText(p, "Hello");
+// an meore versiad clickze moxdes es yvelaferi
+p.innerText = "Click Me";
+p.addEventListener("click", () => {
+  changeText.call(p, p, "Hello There");
+});
 
 // Changing Styles - სტილის შეცვლა
 
-const btn = document.querySelector("button");
+const btn = document.createElement("button");
+document.body.append(btn);
+btn.innerText = "Click Me";
 btn.addEventListener("click", () => {
   btn.style.color = "white";
   btn.style.backgroundColor = "red";
@@ -26,8 +26,12 @@ btn.addEventListener("click", () => {
 
 // Creating Elements - ელემენტების შექმნა
 
-const div = document.querySelector("div");
-const btn = document.querySelector("button");
+const div = document.createElement("div");
+const btn = document.createElement("button");
+
+document.body.append(btn);
+document.body.append(div);
+btn.innerText = "Click Me";
 
 btn.addEventListener("click", insertElement);
 function insertElement() {
@@ -37,7 +41,10 @@ function insertElement() {
 }
 
 // Event Handling
-const btn = document.querySelector("button");
+const btn = document.createElement("button");
+document.body.append(btn);
+btn.innerText = "click Me!";
+
 btn.addEventListener("click", () => {
   alert("ღილაკზე დაწკაპუნება");
 });
@@ -52,19 +59,31 @@ btn.addEventListener("click", (e) => {
     spn.innerText = "Please fill out the input!";
   } else {
     spn.innerText = "Information sent!";
-    inp.value = "";
-    spn.innerText = "";
+  }
+});
+
+//an aseve ufro martivad sheidzleba Regex is gamoyenebit romelic amowmebs 1 asos mainc tu sheicavs
+
+let inpRegex = /.*[A-Za-z].*/;
+
+btn.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (!inpRegex.test(inp.value)) {
+    spn.innerText = "Please fill out the input!";
+  } else {
+    spn.innerText = "Information sent!";
   }
 });
 
 // Dynamic List Management - დინამიური სიის მართვა
+let inpRegex = /.*[A-Za-z].*/;
 const btn = document.querySelector("button");
 const inp = document.querySelector("input");
 const list = document.querySelector("ul");
 
 btn.addEventListener("click", (e) => {
   e.preventDefault();
-  if (inp.value != "") {
+  if (inpRegex.test(inp.value)) {
     let newItem = document.createElement("li");
     let p = document.createElement("p");
     let btn = document.createElement("button");
