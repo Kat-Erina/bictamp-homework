@@ -1,5 +1,5 @@
 // Callback Basics: Write a function that takes a callback as an argument and calls it after a delay of 1 second.
-
+"use strict";
 // es pirveli varianti
 function takesCallback(childFn, arg1, arg2) {
   setTimeout(() => {

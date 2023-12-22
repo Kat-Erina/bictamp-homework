@@ -1,0 +1,125 @@
+{
+  "todos": [
+    {
+      "id": 5,
+      "task": "brush teath",
+      "completed": false
+    },
+    {
+      "id": 6,
+      "task": "drink medicine",
+      "completed": false
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "kato",
+      "borrowedBooks": []
+    },
+    {
+      "id": 2,
+      "name": "Ratmandi",
+      "borrowedBooks": []
+    },
+    {
+      "id": 3,
+      "name": "Natela",
+      "borrowedBooks": [
+        {
+          "name": "Monanieba",
+          "author": "Shio Gvetadze",
+          "id": 16
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Bachuki",
+      "borrowedBooks": [
+        {
+          "name": "Spartaki mokles",
+          "author": "Shio ",
+          "id": 6
+        }
+      ]
+    }
+  ],
+  "books": [
+    {
+      "id": 13,
+      "name": "stumari",
+      "author": "Vaja"
+    },
+    {
+      "id": 11,
+      "name": "mgalobeli",
+      "author": "xalxuri"
+    },
+    {
+      "name": "Baxmaro",
+      "author": "Aleksandre Rukhadze",
+      "id": 12
+    },
+    {
+      "name": "Bazari",
+      "author": "Bachuki",
+      "id": 15
+    },
+    {
+      "name": "Matchankali",
+      "author": "Katerina Nalchevanidze",
+      "id": 5
+    },
+    {
+      "id": 1,
+      "name": "samanishvilis dedinacvali",
+      "author": "Davit Guramishvili"
+    },
+    {
+      "id": 3,
+      "name": "lakartka",
+      "author": "Davit Guramishvili"
+    },
+    {
+      "id": 33,
+      "name": "lakartka mome",
+      "author": "Davita"
+    },
+    {
+      "id": 44,
+      "name": "movida paraskevi",
+      "author": "Davita"
+    },
+    {
+      "id": 25,
+      "name": "Shemodgoma",
+      "author": "Unknown"
+    },
+    {
+      "id": 343,
+      "name": "rahac",
+      "author": "kuxna"
+    },
+    {
+      "id": 21,
+      "name": "gzaze mivdiodi",
+      "author": "Davita"
+    },
+    {
+      "id": 333,
+      "name": "rahac xdeba",
+      "author": "misha"
+    },
+    {
+      "id": 34,
+      "name": "saghamoa",
+      "author": "Davita"
+    },
+    {
+      "id": 53,
+      "name": "ratom miyviri?",
+      "author": "Megrela"
+    }
+  ]
+}
