@@ -121,5 +121,73 @@
       "name": "ratom miyviri?",
       "author": "Megrela"
     }
+  ],
+  "registeredUsers": [
+    {
+      "id": 1,
+      "name": "Kato",
+      "lastname": "Nalchevanidze",
+      "password": "12336!"
+    },
+    {
+      "name": "ს",
+      "lastname": "დდ",
+      "password": "სს",
+      "id": 2
+    },
+    {
+      "name": "რიტა",
+      "lastname": "მარგარიტა",
+      "password": "დვსდ",
+      "id": 3
+    },
+    {
+      "name": "რიტა",
+      "lastname": "მარგარიტა",
+      "password": "დვსდ",
+      "id": 4
+    },
+    {
+      "name": "sdgs",
+      "lastname": "sfs",
+      "password": "sdvd",
+      "id": 5
+    },
+    {
+      "name": "h",
+      "lastname": "jhjvjhv",
+      "password": "hgjhvjhv",
+      "id": 6
+    },
+    {
+      "name": "h",
+      "lastname": "jhjvjhv",
+      "password": "hgjhvjhv",
+      "id": 7
+    },
+    {
+      "name": "ghfg",
+      "lastname": "fbdbd",
+      "password": "ddg",
+      "id": 8
+    },
+    {
+      "name": "gfghgffgfgggf",
+      "lastname": "bdfbfd",
+      "password": "fddfd",
+      "id": 9
+    },
+    {
+      "name": "sas",
+      "lastname": "sss",
+      "password": "sss",
+      "id": 10
+    },
+    {
+      "name": "nati",
+      "lastname": "natela",
+      "password": "uasvdahvh",
+      "id": 11
+    }
   ]
 }
