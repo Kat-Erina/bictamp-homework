@@ -106,3 +106,144 @@ btnMovie.addEventListener("click", () => {
 });
 
 // savarjishoebi
+
+// #1
+// use this endpoint http://localhost:3000/users
+async function getUser(userId) {
+  try {
+    const response = await fetch(`http://localhost:3000/users?id=${userId}`);
+    if (!response.ok) {
+      throw new Error("Opps, could not get the user :(");
+    }
+    const [data] = await response.json();
+    if (!data) {
+      console.log("User does not exist");
+      return;
+    }
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// getUser(22);
+
+//2
+// use this endpoint http://localhost:3000/blogs
+// aq validation ic sheidzleboda damematebina ubralod ar itxovda davaeba,
+const postName = document.querySelector("#name");
+const author = document.querySelector("#author");
+const plot = document.querySelector("#post");
+const btnPost = document.querySelector(".postBtn");
+
+console.log(postName, author, plot);
+
+async function sendNewPost(param1, param2, param3) {
+  try {
+    let newObj = {
+      name: param1,
+      author: param2,
+      plot: param3,
+    };
+    console.log(newObj);
+    const response = await fetch("http://localhost:3000/blogs", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newObj),
+    });
+    if (!response.ok) {
+      throw new Error("Oops, could not send a new post");
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+btnPost.addEventListener("click", (e) => {
+  sendNewPost(postName.value, author.value, plot.value);
+});
+
+//3
+
+const product = document.querySelector(".productId");
+const deleteBtn = document.querySelector(".delete");
+
+async function deleteProduct(productId) {
+  try {
+    const deleteResponse = await fetch(
+      `http://localhost:3000/products/${productId}`,
+      {
+        method: "DELETE",
+      }
+    );
+    if (!deleteResponse.ok) {
+      throw new Error("Oops, sth went wrong");
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+deleteBtn.addEventListener("click", () => {
+  deleteProduct(product.value);
+});
+//4
+
+const contactInput = document.querySelector(".contact");
+const updateBtn = document.querySelector(".update");
+
+async function updateContact(contact, id) {
+  try {
+    const response = await fetch(
+      `http://localhost:3000/registeredUsers/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          contactPhone: contact,
+        }),
+      }
+    );
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+updateBtn.addEventListener("click", () => {
+  updateContact(contactInput.value, 1);
+});
+
+//6
+
+const recipe = document.querySelector("#recipe");
+const updateRcp = document.querySelector(".updateRecipe");
+const mealName = document.querySelector("#mealName");
+
+async function updateRecipe(updatedContent, name) {
+  try {
+    const getRecipe = await fetch(
+      `http://localhost:3000/recipes?name=${name.toLowerCase()}`
+    );
+    const [data] = await getRecipe.json();
+    const response = await fetch(`http://localhost:3000/recipes/${data.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        recipe: updatedContent,
+      }),
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+updateRcp.addEventListener("click", () => {
+  updateRecipe(recipe.value, mealName.value);
+});

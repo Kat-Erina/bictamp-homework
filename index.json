@@ -14,34 +14,35 @@
   "users": [
     {
       "id": 1,
-      "name": "kato",
-      "borrowedBooks": []
-    },
-    {
-      "id": 2,
-      "name": "Ratmandi",
-      "borrowedBooks": []
-    },
-    {
-      "id": 3,
-      "name": "Natela",
-      "borrowedBooks": [
-        {
-          "name": "Monanieba",
-          "author": "Shio Gvetadze",
-          "id": 16
-        }
+      "name": "Katerina",
+      "lastName": "Nalchevanidze",
+      "age": 30,
+      "hobbies": [
+        "watching movies",
+        "writing codes"
       ]
     },
     {
-      "id": 7,
-      "name": "Bachuki",
-      "borrowedBooks": [
-        {
-          "name": "Spartaki mokles",
-          "author": "Shio ",
-          "id": 6
-        }
+      "id": 2,
+      "name": "Kate",
+      "lastName": "White",
+      "age": 20,
+      "hobbies": [
+        "Walking",
+        "cooking",
+        "hiking"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Rati",
+      "lastName": "Black",
+      "age": 33,
+      "hobbies": [
+        "Riding bikes",
+        "watching movies",
+        "snowboarding",
+        "swimming"
       ]
     }
   ],
@@ -127,67 +128,65 @@
       "id": 1,
       "name": "Kato",
       "lastname": "Nalchevanidze",
-      "password": "12336!"
+      "password": "12336!",
+      "contactPhone": "ssds"
     },
     {
-      "name": "ს",
-      "lastname": "დდ",
-      "password": "სს",
+      "name": "რიტა",
+      "lastname": "მარგარიტა",
+      "password": "დვსდ",
+      "id": 4,
+      "contactPhone": "100-123-300"
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "name": "Where to go in Summer 2024",
+      "author": "Katerina",
+      "plot": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero aut laudantium, praesentium sit dignissimos eius."
+    },
+    {
+      "name": "fsdsd ",
+      "author": "dfd",
+      "plot": "sdsdsdss",
       "id": 2
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "book"
     },
     {
-      "name": "რიტა",
-      "lastname": "მარგარიტა",
-      "password": "დვსდ",
-      "id": 3
+      "id": 3,
+      "name": "car"
     },
     {
-      "name": "რიტა",
-      "lastname": "მარგარიტა",
-      "password": "დვსდ",
-      "id": 4
+      "id": 4,
+      "name": "mirror"
+    }
+  ],
+  "recipes": [
+    {
+      "id": 1,
+      "name": "khachapuri",
+      "recipe": "COMI DA YVELI"
     },
     {
-      "name": "sdgs",
-      "lastname": "sfs",
-      "password": "sdvd",
-      "id": 5
+      "id": 2,
+      "name": "lobiani",
+      "recipe": "sdkjvbsdkvjb\nsddc"
     },
     {
-      "name": "h",
-      "lastname": "jhjvjhv",
-      "password": "hgjhvjhv",
-      "id": 6
+      "id": 3,
+      "name": "achma",
+      "recipe": "sdkjvbsdkvjb\n"
     },
     {
-      "name": "h",
-      "lastname": "jhjvjhv",
-      "password": "hgjhvjhv",
-      "id": 7
-    },
-    {
-      "name": "ghfg",
-      "lastname": "fbdbd",
-      "password": "ddg",
-      "id": 8
-    },
-    {
-      "name": "gfghgffgfgggf",
-      "lastname": "bdfbfd",
-      "password": "fddfd",
-      "id": 9
-    },
-    {
-      "name": "sas",
-      "lastname": "sss",
-      "password": "sss",
-      "id": 10
-    },
-    {
-      "name": "nati",
-      "lastname": "natela",
-      "password": "uasvdahvh",
-      "id": 11
+      "id": 4,
+      "name": "khinkali",
+      "recipe": "comi da marjve xelebi da kide xorci"
     }
   ]
 }
